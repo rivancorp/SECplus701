@@ -62,6 +62,26 @@ xhamster.com 88.208.29.180
 iyottube.com 68.235.37.3
              208.77.20.
 
+fw1: subong to elk stack:
+config t
+logging on
+logging host 208.8.8.133 transport udp port 9001
+logging trap informational
+end
+!-------
+config t
+archive
+log config
+logging enable
+notify syslog
+end
+!-------------
+config t
+login on-failure log
+login on-success log
+end
+-------------
+
 net  use  s: \\10.k.1.10\c$
 TASK1: PROTECT YOUR MOST IMPORTANT BUSINESS ASSET:
 PROTECT YOUR PEOPLE/IT STAFF VS HARM. USE THE POWER
